@@ -1,5 +1,5 @@
 {
-  "name": "elastic-logging-core",
+  "name": "elk-logging-core",
   "version": "0.1.4",
   "description": "Core logging tools",
   "main": "lib/index.js",
