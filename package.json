@@ -1,0 +1,33 @@
+{
+  "name": "elastic-logging-core",
+  "version": "0.1.4",
+  "description": "Core logging tools",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npm run clean; babel -d lib src",
+    "clean": "rm -rf ./lib/*.js*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rsengo/elastic-logging-core"
+  },
+  "keywords": [
+    "logging",
+    "elk",
+    "js"
+  ],
+  "author": "RudencovDP",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
