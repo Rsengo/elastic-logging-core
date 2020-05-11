@@ -66,6 +66,6 @@ Try to log at least one message, the index should be created by itself if the se
 - Index Pattern in Kibana is created indefinitely.
 
 Try sending the following queries:
-curl -X PUT yout-elastic-host:your-elastic-port/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}'
+curl -X PUT *yout-elastic-host:your-elastic-port*/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}'
 
-curl -X PUT yout-elastic-host:your-elastic-port/_cluster/settings -d '{"transient": {"cluster.routing.allocation.disk.threshold_enabled": false}
+curl -X PUT *yout-elastic-host:your-elastic-port*/_cluster/settings -d '{"transient": {"cluster.routing.allocation.disk.threshold_enabled": false}
