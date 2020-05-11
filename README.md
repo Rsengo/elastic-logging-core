@@ -61,7 +61,7 @@ After configuration, you can use the methods of this instance inside the applica
 ## Solution to possible problems
 - I can not create an Index Pattern in Kibana, because my index is not listed.
 
-Try to log at least one message, the index should be created by itself if the server accepted your request. The error when sending the log can be tracked in the developer's console in the browser. A request to http: // <your-elastic-host>: <elastic-port> / _bulk should return a 200 response code.
+Try to log at least one message, the index should be created by itself if the server accepted your request. The error when sending the log can be tracked in the developer's console in the browser. A request to http: // *your-elastic-host:elastic-port/_bulk should return a 200 response code.
 
 - Index Pattern in Kibana is created indefinitely.
 
