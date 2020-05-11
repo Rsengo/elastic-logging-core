@@ -54,9 +54,9 @@ After configuration, you can use the methods of this instance inside the applica
 ## Customization of visualization in Kibana
 1. Send a test log to Elasticsearch
 2. Open settings → index management → create index
-[![CreateIndex](https://raw.githubusercontent.com/Rsengo/js-elastic-logging/master/screenshots/CreateIndex.png "CreateIndex")](https://raw.githubusercontent.com/Rsengo/js-elastic-logging/master/screenshots/CreateIndex.png "CreateIndex")
+[![CreateIndex](https://raw.githubusercontent.com/Rsengo/elastic-logging-core/master/screenshots/CreateIndex.png "CreateIndex")](https://raw.githubusercontent.com/Rsengo/elastic-logging-core/master/screenshots/CreateIndex.png "CreateIndex")
 3. Go to the visualization section. Logs for the application will be displayed here.
-[![Visualization](https://raw.githubusercontent.com/Rsengo/js-elastic-logging/master/screenshots/LogsVisualization.png "Visualization")](https://raw.githubusercontent.com/Rsengo/js-elastic-logging/master/screenshots/LogsVisualization.png "Visualization")
+[![Visualization](https://raw.githubusercontent.com/Rsengo/elastic-logging-core/master/screenshots/LogsVisualization.png "Visualization")](https://raw.githubusercontent.com/Rsengo/elastic-logging-core/master/screenshots/LogsVisualization.png "Visualization")
 
 ## Solution to possible problems
 - I can not create an Index Pattern in Kibana, because my index is not listed.
