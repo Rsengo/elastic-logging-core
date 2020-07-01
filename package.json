@@ -1,11 +1,13 @@
 {
   "name": "elk-logging-core",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Core logging tools",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "npm run clean; babel -d lib src",
-    "clean": "rm -rf ./lib/*.js*"
+    "clean": "rm -rf ./lib/*.js*",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
@@ -16,10 +18,12 @@
     "elk",
     "js"
   ],
-  "author": "RudencovDP",
+  "author": "Rsengo",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.9.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

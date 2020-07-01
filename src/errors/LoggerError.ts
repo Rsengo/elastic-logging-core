@@ -1,5 +1,5 @@
 class LoggerError extends Error {
-    constructor(message) {
+    constructor(message: string) {
         super(message);
     }
 }
