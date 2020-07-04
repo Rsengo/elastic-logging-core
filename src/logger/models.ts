@@ -1,5 +1,5 @@
-export type LogLevel = 'info' | 'warn' | 'error';
+import { PlainObject } from "../types";
 
-export type PlainObject = { [name: string]: any }; // TODO
+export type LogLevel = 'info' | 'warn' | 'error';
 
 export type LogMessageData = string | number | PlainObject;

@@ -5,9 +5,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "npm run clean; babel -d lib src",
-    "clean": "rm -rf ./lib/*.js*",
-    "tsc": "tsc"
+    "build": "tsc",
+    "clean": "rm -rf ./lib/*.js*"
   },
   "repository": {
     "type": "git",
@@ -26,10 +25,6 @@
     "typescript": "^3.9.6"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "babel-loader": "^8.1.0"
   },
   "directories": {
     "lib": "lib"

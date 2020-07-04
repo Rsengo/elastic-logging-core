@@ -1,6 +1,6 @@
 import { LogLevel, LogMessageData } from './models';
 import LogMessageFactory from '../message/LogMessageFactory';
-import { validateConfig, generateConfig } from '../config/configWorker';
+import { generateConfig } from '../config/configWorker';
 import { LoggerConfig } from '../config/LoggerConfig';
 import ElasticClient from '../client/ElasticClient';
 
@@ -11,7 +11,6 @@ class Logger {
 
     constructor(config: Partial<LoggerConfig>) {
         const fullConfig = generateConfig(config);
-        validateConfig(fullConfig);
 
         this._client = new ElasticClient(fullConfig);
         this._messageFactory = new LogMessageFactory(fullConfig);

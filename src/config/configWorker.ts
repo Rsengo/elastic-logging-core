@@ -1,7 +1,8 @@
 import LoggerError from '../errors/LoggerError';
 import { LoggerConfig } from './LoggerConfig';
+import defaultConfig from './defaultConfig.json';
 
-export const validateConfig = (config: LoggerConfig) => {
+const validateConfig = (config: Partial<LoggerConfig>) => {
     if (!config.application) {
         throw new LoggerError('Expected application to be specified');
     }
@@ -11,17 +12,13 @@ export const validateConfig = (config: LoggerConfig) => {
     }
 };
 
-// TODO
 export const generateConfig = (userConfig: Partial<LoggerConfig>): LoggerConfig => {
-    return {
-        indexType: '',
-
-        timeout: 100,
-    
-        deprecated: false,
-    
-        url: '',
-        
-        application: ''
+    const config = {
+        ...defaultConfig,
+        ...userConfig
     };
+
+    validateConfig(userConfig);
+
+    return config as LoggerConfig;
 }
