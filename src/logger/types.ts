@@ -2,4 +2,4 @@ import { PlainObject } from "../types";
 
 export type LogLevel = 'info' | 'warn' | 'error';
 
-export type LogMessageData = string | number | PlainObject;
+export type LogMessageData = string | PlainObject;
