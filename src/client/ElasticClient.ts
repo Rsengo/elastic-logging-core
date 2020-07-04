@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
-import { ElasticClientConfig } from './models';
+import { ElasticClientConfig } from './types';
 import clientSettings from './clientSettings.json';
 
 class ElasticClient {
@@ -9,7 +9,7 @@ class ElasticClient {
         this._restClient = this._createClient(config);
     }
 
-    public sendMessage(message: string) {
+    public sendMessage(message: string): void {
         this._restClient.post('', message);
     }
 

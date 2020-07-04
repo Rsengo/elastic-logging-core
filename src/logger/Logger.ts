@@ -1,7 +1,7 @@
-import { LogLevel, LogMessageData } from './models';
+import { LogLevel, LogMessageData } from './types';
 import LogMessageFactory from '../message/LogMessageFactory';
 import { generateConfig } from '../config/configWorker';
-import { LoggerConfig } from '../config/LoggerConfig';
+import { LoggerConfig } from '../config/types';
 import ElasticClient from '../client/ElasticClient';
 
 class Logger {
@@ -16,20 +16,20 @@ class Logger {
         this._messageFactory = new LogMessageFactory(fullConfig);
     }
 
-    log(data: LogMessageData, level: LogLevel) {
+    log(data: LogMessageData, level: LogLevel): void {
         const message: string = this._messageFactory.createLogMessage(data, level);
         this._client.sendMessage(message);
     }
 
-    logError(data: LogMessageData) {
+    logError(data: LogMessageData): void {
         this.log(data, 'error');
     }
 
-    logWarn(data: LogMessageData) {
+    logWarn(data: LogMessageData): void {
         this.log(data, 'warn');
     }
 
-    logInfo(data: LogMessageData) {
+    logInfo(data: LogMessageData): void {
         this.log(data, 'info');
     }
 }

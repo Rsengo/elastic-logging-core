@@ -1,4 +1,4 @@
-import { LogLevel } from "../logger/models";
+import { LogLevel } from "../logger/types";
 import { PlainObject } from "../types";
 
 export interface ElasticIndex {

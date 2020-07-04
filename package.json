@@ -6,7 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "clean": "rm -rf ./lib/*.js*"
+    "clean": "rm -rf ./lib/*.js*",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,15 @@
   "author": "Rsengo",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
-    "tsc": "^1.20150623.0",
-    "typescript": "^3.9.6"
+    "axios": "^0.19.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "eslint": "^7.4.0",
+    "eslint-plugin-react": "^7.20.3",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.9.6"
   },
   "directories": {
     "lib": "lib"

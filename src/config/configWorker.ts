@@ -1,5 +1,5 @@
 import LoggerError from '../errors/LoggerError';
-import { LoggerConfig } from './LoggerConfig';
+import { LoggerConfig } from './types';
 import defaultConfig from './defaultConfig.json';
 
 const validateConfig = (config: Partial<LoggerConfig>) => {

@@ -1,3 +1,3 @@
 export type PlainObject = { 
-    [name: string]: any 
+    [name: string]: unknown 
 }
