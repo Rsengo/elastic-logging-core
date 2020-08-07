@@ -5,20 +5,20 @@ import { LoggerConfig } from '../config/types';
 import ElasticClient from '../client/ElasticClient';
 
 class Logger {
-    private _client: ElasticClient;
+    private client: ElasticClient;
 
-    private _messageFactory: LogMessageFactory;
+    private messageFactory: LogMessageFactory;
 
     constructor(config: Partial<LoggerConfig>) {
         const fullConfig = generateConfig(config);
 
-        this._client = new ElasticClient(fullConfig);
-        this._messageFactory = new LogMessageFactory(fullConfig);
+        this.client = new ElasticClient(fullConfig);
+        this.messageFactory = new LogMessageFactory(fullConfig);
     }
 
     log(data: LogMessageData, level: LogLevel): void {
-        const message: string = this._messageFactory.createLogMessage(data, level);
-        this._client.sendMessage(message);
+        const message: string = this.messageFactory.createLogMessage(data, level);
+        this.client.sendMessage(message);
     }
 
     logError(data: LogMessageData): void {

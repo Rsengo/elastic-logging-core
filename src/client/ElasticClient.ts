@@ -3,17 +3,17 @@ import { ElasticClientConfig } from './types';
 import clientSettings from './clientSettings.json';
 
 class ElasticClient {
-    private readonly _restClient: AxiosInstance;
+    private readonly restClient: AxiosInstance;
 
     constructor(config: ElasticClientConfig) {
-        this._restClient = this._createClient(config);
+        this.restClient = this.createClient(config);
     }
 
     public sendMessage(message: string): void {
-        this._restClient.post('', message);
+        this.restClient.post('', message);
     }
 
-    private _createClient (config: ElasticClientConfig): AxiosInstance {
+    private createClient (config: ElasticClientConfig): AxiosInstance {
         return axios.create({
             baseURL: `${config.url}/${clientSettings.urlPostfix}`,
             timeout: config.timeout,

@@ -8,29 +8,29 @@ import { getISODate } from '../utils/dateUtils';
 
 class LogMessageFactory {
     constructor(
-        private _config: LoggerConfig
+        private config: LoggerConfig
     ) { }
 
     public createLogMessage(data: LogMessageData, level: LogLevel): string {
-        const meta = this._createMetadata();
-        const dataObject = this._createData(data, level);
+        const meta = this.createMetadata();
+        const dataObject = this.createData(data, level);
     
         return `${JSON.stringify(meta)}\n${JSON.stringify(dataObject)}\n`;
     }
 
-    private _createData(data: LogMessageData, level: LogLevel): ElasticMessageData {
+    private createData(data: LogMessageData, level: LogLevel): ElasticMessageData {
         if (typeof data === 'string') {
-            return this._createDataFromString(data, level)
+            return this.createDataFromString(data, level)
         }
     
         if (typeof data === 'object') {
-            return this._createDataFromObject(data, level);
+            return this.createDataFromObject(data, level);
         }
     
         throw new LoggerError('Invalid data format. Expected: string | object without cycle refs');
     }
 
-    private _createDataFromString(data: string, level: LogLevel): ElasticMessageData {
+    private createDataFromString(data: string, level: LogLevel): ElasticMessageData {
         return {
             message: data,
             level,
@@ -38,7 +38,7 @@ class LogMessageFactory {
         };
     }
 
-    private _createDataFromObject(data: PlainObject, level: LogLevel): ElasticMessageData {
+    private createDataFromObject(data: PlainObject, level: LogLevel): ElasticMessageData {
         if (isCyclic(data)) {
             throw new LoggerError('Message data contains some cyclic refs');
         }
@@ -50,18 +50,18 @@ class LogMessageFactory {
         };
     }
 
-    private _createMetadata(): ElasticMessageMetadata {
+    private createMetadata(): ElasticMessageMetadata {
         const index: ElasticIndex = {
-            _index: this._config.application,
+            _index: this.config.application,
         };
     
-        if (!this._config.deprecated) {
+        if (!this.config.deprecated) {
             return { index };
         }
     
         const deprecatedIndex: DeprecatedElasticIndex = {
             ...index,
-            _type: this._config.indexType
+            _type: this.config.indexType
         };
     
         return { index: deprecatedIndex };
